@@ -1,11 +1,10 @@
 import uvicorn as uvicorn
-from fastapi import FastAPI, Request, HTTPException
+from fastapi import FastAPI, Request
 
 from keyboards import admin as admin_kb
 from config import manager_id
 from utils import db
 from create_bot import bot
-from datetime import datetime
 
 app = FastAPI()
 

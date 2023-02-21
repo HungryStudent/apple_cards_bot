@@ -1,10 +1,9 @@
 from aiogram.dispatcher import FSMContext
 from aiogram.dispatcher.filters import Text
 from aiogram.types import Message, CallbackQuery
-import keyboards.admin as admin_kb
 import keyboards.user as user_kb
 
-from config import ADMINS, price_list, manager_id
+
 from create_bot import dp
 from utils import db
 
