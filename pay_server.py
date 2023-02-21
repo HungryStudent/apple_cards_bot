@@ -16,7 +16,7 @@ async def check_pay(req: Request):
         order_id = int(data["OrderId"])
         db.change_order_status(order_id)
         order = db.get_order(order_id)
-        if order is None:
+        if order is None or order["is_paid"]:
             return "OK"
         price = db.get_price(order["price_id"])
         await bot.send_message(order["user_id"],

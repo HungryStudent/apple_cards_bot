@@ -57,7 +57,7 @@ def get_order(order_id):
         connection.row_factory = dict_factory
         cursor: Cursor = connection.cursor()
         cursor.execute(
-            "SELECT orders.user_id, price_id, u.username FROM orders JOIN users u on orders.user_id = u.user_id WHERE id = ?",
+            "SELECT orders.user_id, price_id, is_paid, u.username FROM orders JOIN users u on orders.user_id = u.user_id WHERE id = ?",
             (order_id,))
         return cursor.fetchone()
 
