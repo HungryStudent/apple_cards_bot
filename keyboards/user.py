@@ -26,5 +26,4 @@ def get_pay(user_id, price_id):
     price = db.get_price(price_id)
     pay_url = get_pay_url(order_id, price["amount"], price["nominal"])
     return InlineKeyboardMarkup(row_width=1).add(
-        InlineKeyboardButton(f"Оплатить", url=pay_url),
-        InlineKeyboardButton(f"*УСЛОВНО ОПЛАТИЛ*", callback_data=f"success:{price_id}"))
+        InlineKeyboardButton(f"Оплатить", url=pay_url))

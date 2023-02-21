@@ -22,9 +22,9 @@ async def check_pay(req: Request):
         await bot.send_message(order["user_id"],
                                "Ваша карта оплачена и придет в этот чат в течении 15 минут, если что, ответим на все вопросы прям в этом чате, хорошего дня)")
         await bot.send_message(manager_id, f"""Новая заявка на карту:
-    Пользователь: @{order["username"]}
-    Карта номиналом {price['nominal']}
-    На сумму {price['amount']}""", reply_markup=admin_kb.get_give_code(order["user_id"]))
+Пользователь: @{order["username"]}
+Карта номиналом {price['nominal']}
+На сумму {price['amount']}""", reply_markup=admin_kb.get_give_code(order["user_id"]))
     return "OK"
 
 
